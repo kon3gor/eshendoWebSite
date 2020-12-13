@@ -23,7 +23,7 @@ nav{
   justify-content: center;
   margin: 0;
   font-size: 0.7em;
-  margin-right: 200px;
+  margin-right: 100px;
 }
 
 .nav-link{
@@ -47,7 +47,7 @@ nav{
     margin-top: 0;
     margin-bottom: 0;
     font-size: 3em;
-    margin-left: 200px;
+    margin-left: 100px;
 }
 
 a:hover{
@@ -58,6 +58,45 @@ a:hover{
   background-color: white;
   box-shadow: 0 3px 1rem rgba(0, 0, 0, .1);
 }
+
+@media screen and (max-width: 1300px) {
+  .nav-link{
+    font-size: 2em;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .nav-link{
+    font-size: 1.7em;
+    margin-left: 10px;
+  }
+}
+
+
+@media screen and (max-width: 1050px) {
+  .nav-list{
+    visibility: hidden;
+  }
+  #myname{
+    margin-left: 50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #myname{
+    font-size: 2em;
+
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #myname{
+    font-size: 1em;
+  }
+}
+
+
 
 
 </style>

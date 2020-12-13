@@ -19,6 +19,9 @@
       console.log(event.target.scrollTop);
   }
 
+  let w
+  $: console.log(w)
+
 </script>
 
 
@@ -32,6 +35,8 @@
     <About/>
   </div>
 </main>
+
+<svelte:window bind:innerWidth={w}/>
 
 <style>
 
