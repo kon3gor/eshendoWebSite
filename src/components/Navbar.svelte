@@ -119,7 +119,7 @@ a:hover{
 
 @media screen and (max-width: 400px){
   #myname{
-    font-size: 1em;
+    font-size: 1.5em;
   }
 }
 
