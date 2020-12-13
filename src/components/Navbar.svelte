@@ -43,6 +43,14 @@ nav{
   color: white;
 }
 
+.menu-top-color{
+  background-color: white;
+}
+
+.menu-color{
+  background-color: black;
+}
+
 #myname{
     margin-top: 0;
     margin-bottom: 0;
@@ -63,7 +71,6 @@ a:hover{
 
 .menu-item{
   width: 30px;
-  background-color: white;
   height: 3px;
   margin-top: 5px;
 }
@@ -117,9 +124,15 @@ a:hover{
 }
 
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 481px){
   #myname{
     font-size: 1.5em;
+    margin-left: 0px;
+    padding-left: 10px;
+  }
+  .menu{
+    margin-right: 0px;
+    padding-right: 0px;
   }
 }
 
@@ -130,6 +143,7 @@ a:hover{
 <script>
   export let navClass = "nav"
   export let color = "active-color"
+  export let menuColor = "menu-top-color"
 </script>
 
 <nav class={navClass}>
@@ -153,8 +167,8 @@ a:hover{
     </ul>
 
     <div class="menu">
-      <div class="menu-item"></div>
-      <div class="menu-item"></div>
-      <div class="menu-item"></div>
+      <div class="menu-item {menuColor}"></div>
+      <div class="menu-item {menuColor}"></div>
+      <div class="menu-item {menuColor}"></div>
     </div>
 </nav>

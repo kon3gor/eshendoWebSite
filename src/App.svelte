@@ -6,15 +6,18 @@
 
   let navClass = "nav"
   let color = "inactive-color"
+  let menuColor = "menu-top-color"
 
   function changeClass(event){
       let n = event.target.scrollTop
       if (n > 0){
         navClass= "scrolling-active"
         color = "active-color"
+        menuColor =  "menu-color"
       }else{
         navClass = "nav"
         color = "inactive-color"
+        menuColor =  "menu-top-color"
       }
       console.log(event.target.scrollTop);
   }
@@ -26,7 +29,7 @@
 
 
 <main on:scroll={changeClass}>
-  <Navbar navClass={navClass} color={color}/>
+  <Navbar navClass={navClass} color={color} menuColor={menuColor}/>
   <div class="container">
       <img class="cover" src="waffle.gif">
       <div id="welcome"><h1 >Welcome</h1></div>
@@ -94,6 +97,16 @@
     font-family: "VT323";
     font-size: 6em;
     color: black;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 481px){
+    #welcome > h1{
+      font-size: 7em;
+    }
+    :global(.header){
+      font-size: 5em;
+    }
   }
 
 </style>
