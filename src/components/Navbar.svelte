@@ -116,6 +116,15 @@ a:hover{
   }
 }
 
+
+@media screen and (max-width: 400px){
+  #myname{
+    font-size: 1em;
+  }
+}
+
+
+
 </style>
 
 <script>
