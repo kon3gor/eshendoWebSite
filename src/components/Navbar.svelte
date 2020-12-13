@@ -59,6 +59,21 @@ a:hover{
   box-shadow: 0 3px 1rem rgba(0, 0, 0, .1);
 }
 
+.menu-item{
+  width: 30px;
+  background-color: white;
+  height: 3px;
+  margin-top: 5px;
+}
+
+.menu{
+  transform: translate(-100%, 0%);
+  height: 24px;
+  width: 30px;
+  margin-right: 50px;
+  display: none;
+}
+
 @media screen and (max-width: 1300px) {
   .nav-link{
     font-size: 2em;
@@ -76,17 +91,26 @@ a:hover{
 
 @media screen and (max-width: 1050px) {
   .nav-list{
+    width: 0px;
     visibility: hidden;
+    margin-right: 50px;
+
   }
+
   #myname{
     margin-left: 50px;
+    width: 100vw;
   }
+
+  .menu{
+    display: block; 
+  }
+
 }
 
 @media screen and (max-width: 900px) {
   #myname{
     font-size: 2em;
-
   }
 }
 
@@ -95,9 +119,6 @@ a:hover{
     font-size: 1em;
   }
 }
-
-
-
 
 </style>
 
@@ -125,4 +146,10 @@ a:hover{
             <a href="index.html" class="nav-link {color}">Contacts</a>
         </li>
     </ul>
+
+    <div class="menu">
+      <div class="menu-item"></div>
+      <div class="menu-item"></div>
+      <div class="menu-item"></div>
+    </div>
 </nav>
