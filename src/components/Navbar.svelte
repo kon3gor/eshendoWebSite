@@ -1,4 +1,4 @@
-<style>
+  <style>
 
 nav{
   position: fixed;
@@ -48,6 +48,8 @@ nav{
     margin-bottom: 0;
     font-size: 3em;
     margin-left: 100px;
+    font-family: "VT323", monospace;
+    text-decoration: none;
 }
 
 a:hover{
@@ -103,20 +105,14 @@ a:hover{
   }
 
   .menu{
-    display: block; 
+    display: block;
   }
 
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 600px){
   #myname{
     font-size: 2em;
-  }
-}
-
-@media screen and (max-width: 750px) {
-  #myname{
-    font-size: 1em;
   }
 }
 
@@ -128,7 +124,7 @@ a:hover{
 </script>
 
 <nav class={navClass}>
-    <p id="myname" class="nav-link {color}">Mikhail Beskhitrov</p>
+    <p id="myname" class="{color}">Mikhail Beskhitrov</p>
     <ul class="nav-list">
         <li>
             <a href="#text" class="nav-link {color}">About</a>
