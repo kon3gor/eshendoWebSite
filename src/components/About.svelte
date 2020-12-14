@@ -12,7 +12,9 @@
 
     </div>
 
-
+    <div class="tube-holder">
+      <img id="small" alt=small src="small_tube.png">
+    </div>
 </div>
 
 
@@ -29,7 +31,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto 25%
+    margin: auto 300px
   }
 
   .text-container > p{
@@ -89,6 +91,9 @@
       }
       #me{
         height: 200px;
+      }
+      .tube-holder{
+        display: none;
       }
   }
 

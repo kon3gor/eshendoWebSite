@@ -73,6 +73,7 @@ a:hover{
   width: 30px;
   height: 3px;
   margin-top: 5px;
+  border-radius: 1px;
 }
 
 .menu{
@@ -81,6 +82,27 @@ a:hover{
   width: 30px;
   margin-right: 50px;
   display: none;
+  cursor: pointer;
+}
+
+.nav-list-default{
+  background-color: transparent;
+}
+
+.nav-list-white{
+  background-color: white;
+}
+
+.menu-active{
+  transform: translateX(100%);
+}
+
+.burger-active{
+  transform: rotate(45deg) translate(-5.5px, -5.5px);
+}
+
+.burger-active2{
+  transform: rotate(-45deg) translate(-5px, 6px);
 }
 
 @media screen and (max-width: 1300px) {
@@ -100,10 +122,19 @@ a:hover{
 
 @media screen and (max-width: 1050px) {
   .nav-list{
-    width: 0px;
-    visibility: hidden;
     margin-right: 50px;
-
+    position: absolute;
+    right: 0px;
+    top: 7vh;
+    height: 92vh;
+    margin-right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10px;
+    backdrop-filter: blur(4px);
   }
 
   #myname{
@@ -113,6 +144,9 @@ a:hover{
 
   .menu{
     display: block;
+  }
+  .nav-link{
+    color: black;
   }
 
 }
@@ -137,18 +171,55 @@ a:hover{
 }
 
 
-
 </style>
 
 <script>
   export let navClass = "nav"
   export let color = "active-color"
   export let menuColor = "menu-top-color"
+  export let navListColor = "nav-list-default"
+
+  let burger = 0
+  let translated = true
+  let active = ""
+  let active2 = ""
+  let opacity = 1
+  let w
+
+  $: {
+    console.log(w);
+    if (w <= 1050){
+      burger = 100
+    }else{
+      burger = 0
+    }
+  }
+
+  function clickBurger(){
+    if (!translated){
+      burger = 100
+      translated = true
+      active = ""
+      active2 = ""
+      opacity = 1
+    }else{
+      burger = 0
+      translated = false
+      opacity = 0
+      active = "burger-active"
+      active2 = "burger-active2"
+    }
+
+  }
 </script>
+
+
+<svelte:window bind:innerWidth={w}/>
+
 
 <nav class={navClass}>
     <p id="myname" class="{color}">Mikhail Beskhitrov</p>
-    <ul class="nav-list">
+    <ul class="nav-list {navListColor}" style="transform: translateX({burger}%)">
         <li>
             <a href="#text" class="nav-link {color}">About</a>
         </li>
@@ -166,9 +237,9 @@ a:hover{
         </li>
     </ul>
 
-    <div class="menu">
-      <div class="menu-item {menuColor}"></div>
-      <div class="menu-item {menuColor}"></div>
-      <div class="menu-item {menuColor}"></div>
+    <div class="menu" on:click={clickBurger}>
+      <div class="menu-item {menuColor} {active2}"></div>
+      <div class="menu-item {menuColor}" style="opacity: {opacity}"></div>
+      <div class="menu-item {menuColor} {active}"></div>
     </div>
 </nav>

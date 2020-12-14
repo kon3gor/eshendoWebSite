@@ -7,6 +7,7 @@
   let navClass = "nav"
   let color = "inactive-color"
   let menuColor = "menu-top-color"
+  let nav = "nav-list-default"
 
   function changeClass(event){
       let n = event.target.scrollTop
@@ -14,22 +15,21 @@
         navClass= "scrolling-active"
         color = "active-color"
         menuColor =  "menu-color"
+        nav = "nav-list-white"
       }else{
         navClass = "nav"
         color = "inactive-color"
         menuColor =  "menu-top-color"
+        nav = "nav-list-default"
       }
-      console.log(event.target.scrollTop);
   }
 
-  let w
-  $: console.log(w)
 
 </script>
 
 
 <main on:scroll={changeClass}>
-  <Navbar navClass={navClass} color={color} menuColor={menuColor}/>
+  <Navbar navClass={navClass} color={color} menuColor={menuColor} navListColor={nav}/>
   <div class="container">
       <img class="cover" src="waffle.gif">
       <div id="welcome"><h1 >Welcome</h1></div>
@@ -39,7 +39,6 @@
   </div>
 </main>
 
-<svelte:window bind:innerWidth={w}/>
 
 <style>
 
